@@ -4,6 +4,7 @@ WORKDIR /app
 
 RUN echo "install apache"
 RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
 RUN apt-get install -y apache2 curl
 
 RUN echo "copy in index html"
